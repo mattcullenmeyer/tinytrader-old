@@ -11,6 +11,7 @@ services:
     depends_on:
       - db
     environment:
+      - "DJANGO_SECRET_KEY=8l!%f@har(#$$nmd&nuct4tmmdw&%@)v342glsz2k*yeyk(uo70"
       - "DJANGO_DEBUG=True"
       - "DJANGO_SECURE_SSL_REDIRECT=False"
       - "DJANGO_SECURE_HSTS_SECONDS=0"
