@@ -9,6 +9,7 @@ verify_ssl = true
 django = "~=3.1.0"
 psycopg2-binary = "==2.8.5"
 environs = {extras = ["django"], version = "==8.0.0"}
+django-crispy-forms = "==1.9.2"
 
 [requires]
 python_version = "3.7"
