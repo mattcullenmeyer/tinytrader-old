@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # Local
     'users',
     'pages',
+    'blog',
 ]
 
 MIDDLEWARE = [

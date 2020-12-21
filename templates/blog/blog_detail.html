@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col card mb-4  mt-3">
+        <div class="card-body">
+            <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+            <p class="card-text ">{{ object.content | safe }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -22,4 +22,5 @@ urlpatterns = [
 
     # Local apps
     path('', include('pages.urls')),
+    path('', include('blog.urls')),
 ]
