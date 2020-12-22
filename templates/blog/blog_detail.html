@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load markdown_extras %}
 
 {% block content %}
 
@@ -8,7 +9,7 @@
         <div class="card-body">
             <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
             <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-            <p class="card-text ">{{ object.content | safe }}</p>
+            <p class="card-text">{{ object.content | markdown | safe }}</p>
         </div>
     </div>
 </div>
