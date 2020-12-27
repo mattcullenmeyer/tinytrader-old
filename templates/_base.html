@@ -9,6 +9,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block styles %}
+    {% endblock %}
 </head>
 <body>
     <header>
@@ -17,7 +19,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{% url 'pages:home' %}">
                     <img src="{% static 'images/tiny trader logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="tiny trader logo">
-                    <span class="d-inline-block align-top nav-logo-text">tiny trader</span>
+                    <span class="d-inline-block align-top nav-logo-text">TinyTrader</span>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <form class="form-inline">

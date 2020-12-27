@@ -11,6 +11,7 @@ psycopg2-binary = "==2.8.5"
 environs = {extras = ["django"], version = "==8.0.0"}
 django-crispy-forms = "==1.9.2"
 markdown = "==3.3.3"
+pygments = "==2.7.3"
 
 [requires]
 python_version = "3.7"
