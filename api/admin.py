@@ -1,9 +1,9 @@
 from django.contrib import admin
-from api import models
+from api.models import *
 
-admin.site.register(models.Ticker)
-admin.site.register(models.Sector)
-admin.site.register(models.Industry)
-admin.site.register(models.MarketCapSize)
-admin.site.register(models.Metadata)
-admin.site.register(models.Values)
+admin.site.register(Ticker)
+admin.site.register(Sector)
+admin.site.register(Industry)
+admin.site.register(MarketCapSize)
+admin.site.register(Metadata)
+admin.site.register(Values)
