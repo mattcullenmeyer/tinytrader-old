@@ -1,21 +1,28 @@
-from django.views.generic import TemplateView
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework import viewsets
 from api import models
-
-class HappyView(TemplateView):
-    template_name = 'pages/home.html'
+from api import serializers
 
 
-class HelloView(APIView):
-    def get(self, request):
-        content = {'message': 'Hello, World!'}
-        return Response(content)
+class TickerViewSet(viewsets.ModelViewSet):
+    queryset = models.Ticker.objects.all()
+    serializer_class = serializers.TickerSerializer
 
-class TickerView(APIView):
-    def get(self, request, format=None):
-        tickers = [item.ticker for item in models.Ticker.objects.all()] #[user.username for user in User.objects.all()]
-        return Response(tickers)
+class SectorViewSet(viewsets.ModelViewSet):
+    queryset = models.Sector.objects.all()
+    serializer_class = serializers.SectorSerializer
 
-#class HelloView(TemplateView):
-#    template_name = 'pages/about.html'
+class IndustryViewSet(viewsets.ModelViewSet):
+    queryset = models.Industry.objects.all()
+    serializer_class = serializers.IndustrySerializer
+
+class SizeViewSet(viewsets.ModelViewSet):
+    queryset = models.MarketCapSize.objects.all()
+    serializer_class = serializers.SizeSerializer
+
+class MetadataViewSet(viewsets.ModelViewSet):
+    queryset = models.Metadata.objects.all()
+    serializer_class = serializers.MetadataSerializer
+
+class MetricViewSet(viewsets.ModelViewSet):
+    queryset = models.Metric.objects.all()
+    serializer_class = serializers.MetricSerializer
