@@ -1,8 +1,58 @@
 {% extends '_base.html' %}
 {% load static %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
 {% block title %}About{% endblock title %}
 
 {% block content %}
-<h1>About</h1>
+
+<h1>About TinyTrader...</h1>
+<hr />
+<h3>Quant Investing for Everyone</h3>
+<h5>I'm Matt, a hobbyist quant who saw a gap in the ability for individual investors to compete against Wall Street.</h5>
+<p>So I decided to do something about it.</p>
+<p>
+    Like a lot of other investors, I first became hooked on stock investing after reading The Intelligent Investor by Ben Graham.
+    I was especially drawn to how Graham applied scientific rigor to stock analysis.
+    I wanted to learn more. I started reading all I could about quantitative analysis.
+    It wasn't long before I stumbled across factor-based investing.
+    If I was going to actively invest, that's how I wanted to do it.
+</p>
+<p>
+    I knew I had a lot to learn if I wanted to become a quant.
+    After finishing my Masters, teaching myself computer programming, and becoming a CFA charterholder, I thought I was ready.
+    I wasn't.
+</p>
+<p>
+    The first big problem is getting access to good data.
+    Quality stock data is only available to institutional investors with deep pockets.
+    The free or cheap stuff is incomplete and disorganized across the web.
+    Traditional stock screens aren't a practical solution for quants either.
+    They don't provide a way to rank stocks by percentiles across multiple factors (arguably the most common quant strategy).
+</p>
+<p>
+    What's more, even with the right data and skills in hand, it's incredibly time-consuming to setup all your systems.
+    You'll likely need to architect a database, connect a few APIs, program some statistical software, and design your algorithms.
+    All that assumes you already know the exact investment strategy you want to implement.
+    Add on quantitative research and backtesting and it's no wonder that individual investors stay out of the quant game.
+</p>
+<p>
+    So, in 2018, I decided to turn my side project into something that could benefit other individual investors.
+    I founded TinyTrader on the belief that quantitative investing shouldn't be limited solely to institutional funds with their teams of PhDs and expensive data sets.
+    I wanted to give do-it-yourself investors the high-end tools and resources to compete in a stock market that was increasingly played by computers and algorithms.
+</p>
+<p>
+    I believe quantitative investing should be accessible to everyone.
+    Since founding TinyTrader, I've invested a lot of effort in providing everyday investors with access to quantitative stock analysis that is otherwise difficult or costly to find.
+</p>
+<p>
+    The "Tiny" in TinyTrader is, after all, a nod to individual investors who often have the deck stacked against them when it comes to competing against professional money managers.
+    I created this investment site to democratize quantitative investing and empower the underdogs.
+</p>
+<p>Consider the playing field leveled.</p>
+<p>Matt Cullen-Meyer, CFA</p>
+
 {% endblock content %}
