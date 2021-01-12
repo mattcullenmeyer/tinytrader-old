@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # Third-party
     'crispy_forms',
     'rest_framework',
+    'rest_framework.authtoken', # http://www.tomchristie.com/rest-framework-2-docs/api-guide/authentication#tokenauthentication
 
     # Local
     'users',
@@ -129,3 +130,13 @@ AUTH_USER_MODEL = 'users.User'
 
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Ensure a tightly secured API by setting default permission class to allow only admins
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAdminUser',
+    ),
+}

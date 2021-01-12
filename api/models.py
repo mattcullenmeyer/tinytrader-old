@@ -1,25 +1,25 @@
 from django.db import models
 
 class Ticker(models.Model):
-	ticker = models.CharField(max_length=6)
+	ticker = models.CharField(max_length=6, unique=True)
 
 	def __str__(self):
 		return f'{self.id} {self.ticker}'
 
 class Sector(models.Model):
-	sector = models.CharField(max_length=100)
+	sector = models.CharField(max_length=100, unique=True)
 
 	def __str__(self):
 		return f'{self.id} {self.sector}'
 
 class Industry(models.Model):
-	industry = models.CharField(max_length=100)
+	industry = models.CharField(max_length=100, unique=True)
 
 	def __str__(self):
 		return f'{self.id} {self.industry}'
 
 class MarketCapSize(models.Model):
-	market_cap_size = models.CharField(max_length=100)
+	market_cap_size = models.CharField(max_length=100, unique=True)
 
 	def __str__(self):
 		return f'{self.id} {self.market_cap_size}'
@@ -39,6 +39,9 @@ class Metadata(models.Model):
 	earnings_date = models.DateField()
 	
 	last_updated = models.DateField() # timestamp of when data was last refreshed
+
+	def __str__(self):
+		return f'{self.ticker}'
 	
 class Metric(models.Model):
 	ticker = models.OneToOneField(Ticker, on_delete=models.CASCADE)
@@ -154,3 +157,6 @@ class Metric(models.Model):
 	accrual_sec_rank = models.IntegerField()
 	accrual_ind_median = models.FloatField()
 	accrual_ind_rank = models.IntegerField()
+
+	def __str__(self):
+		return f'{self.ticker}'

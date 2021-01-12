@@ -32,5 +32,4 @@ class MetadataSerializer(serializers.ModelSerializer):
 class MetricSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Metric
-        fields = ('id',)
-        #fields = '__all__'
+        fields = '__all__'

@@ -1,7 +1,9 @@
 from rest_framework import viewsets
 from api import models
 from api import serializers
+from rest_framework.permissions import IsAuthenticated
 
+# https://www.django-rest-framework.org/api-guide/viewsets/
 
 class TickerViewSet(viewsets.ModelViewSet):
     queryset = models.Ticker.objects.all()
