@@ -6,16 +6,15 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 # https://www.django-rest-framework.org/tutorial/quickstart/
 router = routers.DefaultRouter()
-router.register(r'ticker', views.TickerViewSet)
-router.register(r'sector', views.SectorViewSet)
-router.register(r'industry', views.IndustryViewSet)
-router.register(r'size', views.SizeViewSet)
-router.register(r'metadata', views.MetadataViewSet)
-router.register(r'metric', views.MetricViewSet)
-#router.register(r'api-token-auth', views.MetricViewSet)
+router.register(r'ticker', views.TickerViewSet, 'ticker')
+router.register(r'sector', views.SectorViewSet, 'sector')
+router.register(r'industry', views.IndustryViewSet, 'industry')
+router.register(r'size', views.SizeViewSet, 'size')
+router.register(r'metadata', views.MetadataViewSet, 'metadata')
+router.register(r'metric', views.MetricViewSet, 'metric')
 
 app_name = 'api'
 urlpatterns = [
 	path('api/', include(router.urls)),
-	path('api-token-auth/', obtain_auth_token, name='api_token_auth')
+	path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
 ]

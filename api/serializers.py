@@ -33,3 +33,6 @@ class MetricSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Metric
         fields = '__all__'
+
+# https://www.django-rest-framework.org/api-guide/relations/#nested-relationships
+
