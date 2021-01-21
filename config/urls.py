@@ -6,6 +6,9 @@ urlpatterns = [
     # Django admin
     path('admin/', admin.site.urls),
 
+    # User management
+    path('', include('allauth.urls')), 
+
     # Local apps
     path('', include('pages.urls')),
     path('', include('api.urls')),
