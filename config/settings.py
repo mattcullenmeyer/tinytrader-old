@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django_filters', # https://www.django-rest-framework.org/api-guide/filtering/#djangofilterbackend
     'allauth', # https://django-allauth.readthedocs.io/en/latest/
     'allauth.account',
+    'django_js_reverse', # https://pypi.org/project/django-js-reverse/
 
     # Local
     'users',

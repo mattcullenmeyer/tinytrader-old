@@ -2,6 +2,7 @@ from django.db import models
 
 class Ticker(models.Model):
 	ticker = models.CharField(max_length=6, unique=True)
+	company_name_ticker = models.CharField(max_length=200)
 
 	def __str__(self):
 		return f'{self.id} {self.ticker}'
