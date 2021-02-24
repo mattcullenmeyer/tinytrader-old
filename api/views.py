@@ -26,6 +26,7 @@ class SizeViewSet(viewsets.ModelViewSet):
 class MetadataViewSet(viewsets.ModelViewSet):
     queryset = models.Metadata.objects.all()
     serializer_class = serializers.MetadataSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = '__all__' # https://www.django-rest-framework.org/api-guide/filtering/#djangofilterbackend
 
 class MetricViewSet(viewsets.ModelViewSet):

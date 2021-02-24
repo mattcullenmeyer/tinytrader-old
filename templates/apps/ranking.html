@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/apps/ranking.css' %}">
+{% endblock %}
+
+{% block title %}{{ metadata.ticker.ticker }}{% endblock title %}
+
+{% block content %}
+
+<h1>{{ metadata.company_name }}</h1>
+
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'js/apps/ranking.js' %}"></script>
+{% endblock %}

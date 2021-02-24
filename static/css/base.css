@@ -1,5 +1,36 @@
+h1 {
+    font-size: 2.5rem;
+    color: #333e48;
+    font-weight: 700;
+}
 
+h3 {
+    font-size: 1.5rem;
+    color: #333e48;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    color: #333e48;
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    color: #333e48;
+    margin-top: 1.5rem;
+}
+
+.navbar {
+    margin-bottom: 2rem
+}
 
 .nav-logo-text {
     font-weight: 500;
 }
+
