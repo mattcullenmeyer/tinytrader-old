@@ -8,6 +8,11 @@ class TickerSerializer(serializers.ModelSerializer):
         model = models.Ticker
         fields = '__all__' # you can't use __all__ with HyperlinkedModelSerializer
         #fields = ('id', 'ticker',)
+        # https://stackoverflow.com/questions/32201257/django-rest-framework-access-item-detail-by-slug-instead-of-id
+        lookup_field = 'ticker'
+        extra_kwargs = {
+            'url': {'lookup_field': 'ticker'}
+        }
 
 class SectorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -33,6 +38,10 @@ class MetricSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Metric
         fields = '__all__'
+        lookup_field = 'ticker'
+        extra_kwargs = {
+            'url': {'lookup_field': 'ticker'}
+        }
 
 # https://www.django-rest-framework.org/api-guide/relations/#nested-relationships
 

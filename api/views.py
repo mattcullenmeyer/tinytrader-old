@@ -9,6 +9,7 @@ from api import serializers
 class TickerViewSet(viewsets.ModelViewSet):
     queryset = models.Ticker.objects.all()
     serializer_class = serializers.TickerSerializer
+    lookup_field = 'ticker'
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 class SectorViewSet(viewsets.ModelViewSet):
@@ -32,4 +33,6 @@ class MetadataViewSet(viewsets.ModelViewSet):
 class MetricViewSet(viewsets.ModelViewSet):
     queryset = models.Metric.objects.all()
     serializer_class = serializers.MetricSerializer
-    filterset_fields = '__all__'
+    lookup_field = 'ticker'
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    #filterset_fields = '__all__'
