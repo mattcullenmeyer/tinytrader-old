@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\api",
-    "\\apps"
+    "\\static\\css",
+    "\\static\\css\\apps",
+    "\\static\\js",
+    "\\static\\js\\apps",
+    "\\templates\\pages"
   ],
-  "SelectedNode": "\\api\\views.py",
+  "SelectedNode": "\\users",
   "PreviewInSolutionExplorer": false
 }

@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import TemplateView
 from api.models import Ticker, Metadata
 
 class RankingView(TemplateView):
@@ -15,3 +15,6 @@ class RankingView(TemplateView):
         # and pass returned data to template
         context['metadata'] = Metadata.objects.get(ticker=ticker)
         return context
+
+class ReactView(TemplateView):
+    template_name = 'apps/react.html'
