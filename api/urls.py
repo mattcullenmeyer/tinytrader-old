@@ -12,6 +12,7 @@ router.register(r'sector', views.SectorViewSet, 'sector')
 router.register(r'industry', views.IndustryViewSet, 'industry')
 router.register(r'size', views.SizeViewSet, 'size')
 router.register(r'metadata', views.MetadataViewSet, 'metadata')
+router.register(r'metadata/<ticker>/', views.MetadataViewSet, 'metadata-detail')
 router.register(r'metric', views.MetricViewSet, 'metric')
 router.register(r'metric/<ticker>/', views.MetricViewSet, 'metric-detail')
 

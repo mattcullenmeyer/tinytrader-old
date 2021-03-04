@@ -33,6 +33,10 @@ class MetadataSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Metadata
         fields = '__all__'
+        lookup_field = 'ticker'
+        extra_kwargs = {
+            'url': {'lookup_field': 'ticker'}
+        }
 
 class MetricSerializer(serializers.ModelSerializer):
     class Meta:

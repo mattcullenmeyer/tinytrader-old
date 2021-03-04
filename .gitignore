@@ -1,1 +1,4 @@
 docker-compose-prod.yml
+
+# Visual Studio directory
+.vs/
