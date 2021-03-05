@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 //import axios from 'axios';
 import SmallCard from './SmallCard';
-
+import RankCircle from './RankCircle';
 
 
 
@@ -48,18 +48,44 @@ class App extends React.Component {
                     <span>{this.state.metadata.company_name}</span>
                     <span className="ticker-symbol"> ({this.state.ticker})</span>
                 </h1>
-                <div class="timestamp">Market close {this.state.metadata.last_updated}</div>
-                <h2 class="sub-heading">Composite Ranks</h2>
-                <div>
-                    <SmallCard 
-                        title="Overall" 
-                        rank={this.state.metrics.composite_rank} 
-                        margin="factor-margin-1" 
-                    />
-                    <SmallCard title="Value" margin="factor-margin-2" />
-                    <SmallCard title="Momentum" margin="factor-margin-1" />
-                    <SmallCard title="Quality" />
-                </div>
+                <div className="timestamp">Market close {this.state.metadata.last_updated}</div>
+
+                <h2 className="sub-heading">Composite Ranks</h2>
+
+                <SmallCard title="Overall" margin="factor-margin-1">
+                    <RankCircle rank={this.state.metrics.composite_rank} />
+                </SmallCard>
+
+                <SmallCard title="Value" margin="factor-margin-2">
+                    <RankCircle rank={this.state.metrics.value_rank} />
+                </SmallCard>
+
+                <SmallCard title="Momentum" margin="factor-margin-1">
+                    <RankCircle rank={this.state.metrics.mom_rank} />
+                </SmallCard>
+
+                <SmallCard title="Quality">
+                    <RankCircle rank={this.state.metrics.quality_rank} />
+                </SmallCard>
+
+                <h2 class="sub-heading">Quality Ranks</h2>
+
+                <SmallCard title="Volatility" margin="factor-margin-1">
+                    <RankCircle rank={this.state.metrics.vol_rank} />
+                </SmallCard>
+
+                <SmallCard title="Profitability" margin="factor-margin-2">
+                    <RankCircle rank={this.state.metrics.profit_rank} />
+                </SmallCard>
+
+                <SmallCard title="Financing" margin="factor-margin-1">
+                    <RankCircle rank={this.state.metrics.finance_rank} />
+                </SmallCard>
+
+                <SmallCard title="Safety">
+                    <RankCircle rank={this.state.metrics.safety_rank} />
+                </SmallCard>
+
             </div>
         );
     };
