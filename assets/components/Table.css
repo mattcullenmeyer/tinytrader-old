@@ -8,7 +8,7 @@
 .stats-table {
     border-style: none;
     color: rgb(62,74,86);
-    font-size: 1.0em;
+    line-height: 1.55em;
     font-family: Poppins, sans-serif;
     vertical-align: middle;
     font-weight: normal;
@@ -17,11 +17,13 @@
 .left {
     text-align: left;
     width: 85%;
+    font-size: 0.95em;
 }
 
 .right {
     text-align: center;
     width: 15%;
+    font-size: 1.0em;
 }
 
 .top {

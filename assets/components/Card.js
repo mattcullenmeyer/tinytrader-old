@@ -6,7 +6,7 @@ const sizeConfig = {
         height: '16em'
     },
     large: {
-        height: '24.5em'
+        height: '26.5em' //'24.5em'
     }
 };
 

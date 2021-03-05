@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-//import axios from 'axios';
+import axios from 'axios';
+import Header from './Header';
 import Card from './Card';
 import RankCircle from './RankCircle';
 import Table from './Table';
-
+import RankTag from './RankTag';
 
 
 class App extends React.Component {
@@ -24,32 +25,28 @@ class App extends React.Component {
         //console.log(this.state.ticker);
         
         // Get ticker id from ticker symbol
-        const ticker_response = await fetch(`/api/ticker/${this.state.ticker}/`)
-        const ticker_json = await ticker_response.json();
-        const ticker_id = ticker_json.id;
+        const ticker_response = await axios.get(`/api/ticker/${this.state.ticker}/`);
+        const ticker_id = ticker_response.data.id;
 
         // Get metrics for company
-        const metric_response = await fetch(`/api/metric/${ticker_id}/`)
-        const metric_json = await metric_response.json();
-        console.log(metric_json);
+        const metric_response = await axios.get(`/api/metric/${ticker_id}/`);
+        this.setState({ metrics: metric_response.data });
 
         // Get metadata for company
-        const metadata_response = await fetch(`/api/metadata/${ticker_id}/`)
-        const metadata_json = await metadata_response.json();
-        console.log(metadata_json);
-        
-        this.setState({ metadata: metadata_json, metrics: metric_json });
-
+        const metadata_response = await axios.get(`/api/metadata/${ticker_id}/`);
+        this.setState({ metadata: metadata_response.data });
     };
 
+
     render() {
+        
         return (
             <div>
-                <h1 className="company-name">
-                    <span>{this.state.metadata.company_name}</span>
-                    <span className="ticker-symbol"> ({this.state.ticker})</span>
-                </h1>
-                <div className="timestamp">Market close {this.state.metadata.last_updated}</div>
+                <Header 
+                    company_name={this.state.metadata.company_name} 
+                    ticker={this.state.ticker}
+                    date={this.state.metadata.last_updated}
+                />
 
                 <h2 className="sub-heading">Composite Ranks</h2>
 
@@ -99,6 +96,7 @@ class App extends React.Component {
                         indMedian={this.state.metrics.pe_ind_median}
                         indRank={this.state.metrics.pe_ind_rank}
                     />
+                    <RankTag name="Value" />
                 </Card>
 
                 <Card title="Book / Price" size="large" location="middleLeft">
@@ -111,6 +109,7 @@ class App extends React.Component {
                         indMedian={this.state.metrics.pb_ind_median}
                         indRank={this.state.metrics.pb_ind_rank}
                     />
+                    <RankTag name="Value" />
                 </Card>
 
                 <Card title="Sales / Price" size="large" location="middleRight">
@@ -123,6 +122,7 @@ class App extends React.Component {
                         indMedian={this.state.metrics.ps_ind_median}
                         indRank={this.state.metrics.ps_ind_rank}
                     />
+                    <RankTag name="Value" />
                 </Card>
 
                 <Card title="FCF / Price" size="large" location="right">
@@ -135,6 +135,7 @@ class App extends React.Component {
                         indMedian={this.state.metrics.pcf_ind_median}
                         indRank={this.state.metrics.pcf_ind_rank}
                     />
+                    <RankTag name="Value" />
                 </Card>
 
             </div>

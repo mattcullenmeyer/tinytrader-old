@@ -1,0 +1,16 @@
+
+.rank-tag {
+    font-family: Poppins, sans-serif;
+    font-size: 0.9em;
+    font-weight: 500;
+    background-color: rgb(138,174,254);
+    border-color: rgb(138,174,254);
+    border-radius: 0.9em;
+    padding: 0 .5em;
+    color: white; 
+    border-style: solid;
+    cursor: pointer;
+    float: left;
+    margin-top: 0.75em;
+    margin-left: 1.2em;
+}
