@@ -9,22 +9,19 @@ import Table from './Table';
 import RankTag from './RankTag';
 
 
+ // Get pathname from current url
+const ticker_path = window.location.pathname;
+// Regex to replace all instances of forward slashes
+const ticker = ticker_path.replace(/\//g, '');
+
 class App extends React.Component {
     state = { 
-        ticker: 'AAPL',
+        ticker: ticker,
         metadata: [],
         metrics: [],
     };
 
     async componentDidMount() {
-        // Get pathname from current url
-        const ticker_path = window.location.pathname;
-        // Regex to replace all instances of forward slashes
-        const ticker = ticker_path.replace(/\//g, '');
-        //console.log(ticker);
-        //this.setState({ ticker: 'AAPL' });
-        //console.log(this.state.ticker);
-        
         // Get ticker id from ticker symbol
         const ticker_response = await axios.get(`/api/ticker/${this.state.ticker}/`);
         const ticker_id = ticker_response.data.id;
@@ -36,6 +33,8 @@ class App extends React.Component {
         // Get metadata for company
         const metadata_response = await axios.get(`/api/metadata/${ticker_id}/`);
         this.setState({ metadata: metadata_response.data });
+
+        document.title = this.state.ticker;
     };
 
 

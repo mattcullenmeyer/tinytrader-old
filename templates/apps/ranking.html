@@ -1,102 +1,12 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block styles %}
-<link rel="stylesheet" href="{% static 'css/apps/ranking.css' %}">
-{% endblock %}
-
-{% block title %}{{ metadata.ticker.ticker }}{% endblock title %}
+{% block title %}OK{% endblock title %}
 
 {% block content %}
-
-<h1 class="company-name">
-    <span>{{ metadata.company_name }}</span>
-    <span class="ticker-symbol">({{ metadata.ticker.ticker }})</span>
-</h1>
-
-<div class="timestamp">Market close {{ metadata.last_updated }}</div>
-
-<h2 class="sub-heading">Composite Ranks</h2>
-
-<div class="rank-container factor-margin-1">
-    <h3 class="rank-type">Overall</h3>
-    <div class="circle">
-        <div id="comp-rank" class="rank-text"></div>
-    </div>
-    <div id="comp-rank-arc-1" class="arc"></div>
-    <div id="comp-rank-arc-2" class="arc"></div>
-</div>
-
-<div class="rank-container factor-margin-2">
-    <h3 class="rank-type">Value</h3>
-    <div class="circle">
-        <div id="value-rank" class="rank-text"></div>
-    </div>
-    <div id="value-rank-arc-1" class="arc"></div>
-    <div id="value-rank-arc-2" class="arc"></div>
-</div>
-
-<div class="rank-container factor-margin-1">
-    <h3 class="rank-type">Momentum</h3>
-    <div class="circle">
-        <div id="mom-rank" class="rank-text"></div>
-    </div>
-    <div id="mom-rank-arc-1" class="arc"></div>
-    <div id="mom-rank-arc-2" class="arc"></div>
-</div>
-
-<div class="rank-container">
-    <h3 class="rank-type">Quality</h3>
-    <div class="circle">
-        <div id="quality-rank" class="rank-text"></div>
-    </div>
-    <div id="quality-rank-arc-1" class="arc"></div>
-    <div id="quality-rank-arc-2" class="arc"></div>
-</div>
-
-<h2 class="sub-heading">Quality Ranks</h2>
-
-<div class="rank-container factor-margin-1">
-    <h3 class="rank-type">Volatility</h3>    
-    <div class="circle">
-        <div id="vol-rank" class="rank-text"></div>
-    </div>
-    <div id="vol-rank-arc-1" class="arc"></div>
-    <div id="vol-rank-arc-2" class="arc"></div>
-</div>
-
-<div class="rank-container factor-margin-2">
-    <h3 class="rank-type">Profitability</h3>    
-    <div class="circle">
-        <div id="profit-rank" class="rank-text"></div>
-    </div>
-    <div id="profit-rank-arc-1" class="arc"></div>
-    <div id="profit-rank-arc-2" class="arc"></div>
-</div>
-
-<div class="rank-container factor-margin-1">
-    <h3 class="rank-type">Financing</h3>
-    <div class="circle">
-        <div id="fin-rank" class="rank-text"></div>
-    </div>
-    <div id="fin-rank-arc-1" class="arc"></div>
-    <div id="fin-rank-arc-2" class="arc"></div>
-</div>
-
-<div class="rank-container">
-    <h3 class="rank-type">Safety</h3>    
-    <div class="circle">
-        <div id="safe-rank" class="rank-text"></div>
-    </div>
-    <div id="safe-rank-arc-1" class="arc"></div>
-    <div id="safe-rank-arc-2" class="arc"></div>
-</div>
-
-
-
-
+<div id="root"></div>
 {% endblock content %}
 
 {% block scripts %}
-<script src="{% static 'js/apps/ranking.js' %}"></script>
+<script src="{% static 'js/index-bundle.js' %}"></script>
 {% endblock %}
