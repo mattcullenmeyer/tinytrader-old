@@ -79,14 +79,6 @@ body {
     border-radius: 0.7em;
 }
 
-.table-container {
-    position: relative;
-    margin-left: 4%;
-    margin-right: 4%;
-    /*padding-top: 14em;*/
-    margin-top: 14em; /*16em;*/
-}
-
 .factor-margin-1 {
     margin-right: 2%;
 }
@@ -100,16 +92,7 @@ body {
 }
 
 /* value, momentum, quality, etc */
-.rank-type {
-    color: rgb(62,74,86);
-    font-family: Poppins, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 1.2em; /*1.5em;*/
-    font-style: normal;
-    font-weight: 500;
-    padding-left: 1.2em;
-    padding-top: 0.8em;
-}
+
 
 .more-button {
     font-family: Poppins, sans-serif;
@@ -241,93 +224,11 @@ body {
     transform: rotate(45deg);
 }
 
-.stats-table {
-    border-style: none;
-}
-
-    .stats-table .stats-table-top-left {
-        color: rgb(62,74,86);
-        font-weight: 600;
-        font-size: 1.0em; /*1.2em;*/
-        font-family: Poppins, sans-serif;
-        border-left: 2px solid white;
-        border-top: 2px solid white;
-        vertical-align: middle;
-        text-align: left;
-        width: 85%;
-    }
-
-    .stats-table .stats-table-top-right {
-        color: rgb(62,74,86);
-        font-weight: 600;
-        font-size: 1.0em; /*1.2em;*/
-        font-family: Poppins, sans-serif;
-        border-right: 2px solid white;
-        border-left: none;
-        border-top: 2px solid white;
-        vertical-align: middle;
-        text-align: center;
-        width: 15%;
-    }
-
-    .stats-table .stats-table-left {
-        color: rgb(62,74,86);
-        font-weight: normal;
-        font-size: 1.0em; /*1.1em;*/
-        font-family: Poppins, sans-serif;
-        border-left: 2px solid white;
-        border-top: 2px solid rgb(248,250,252);
-        vertical-align: middle;
-        text-align: left;
-        width: 85%;
-    }
-
-    .stats-table .stats-table-right {
-        color: rgb(62,74,86);
-        font-weight: normal;
-        font-size: 1.0em; /*1.1em;*/
-        font-family: Poppins, sans-serif;
-        border-right: 2px solid white;
-        border-left: none;
-        border-top: 2px solid rgb(248,250,252);
-        vertical-align: middle;
-        text-align: center;
-        width: 15%;
-    }
-
-    .stats-table .stats-table-bottom-left {
-        color: rgb(62,74,86);
-        font-weight: normal;
-        font-size: 1.0em; /*1.1em;*/
-        font-family: Poppins, sans-serif;
-        border-right: 2px solid white;
-        border-left: 2px solid white;
-        border-bottom: 2px solid white;
-        border-top: 2px solid rgb(248,250,252);
-        vertical-align: middle;
-        text-align: left;
-        width: 85%;
-    }
-
-    .stats-table .stats-table-bottom-right {
-        color: rgb(62,74,86);
-        font-weight: normal;
-        font-size: 1.0em; /*1.1em;*/
-        font-family: Poppins, sans-serif;
-        border-right: 2px solid white;
-        border-left: 2px solid white;
-        border-bottom: 2px solid white;
-        border-top: 2px solid rgb(248,250,252);
-        vertical-align: middle;
-        text-align: center;
-        width: 15%;
-    }
-
 
 
 
 /* tablets */
-@media only screen and (max-width:1200px) {
+@media only screen and (max-width:600px) {
     /* for tablets */
     .rank-container {
         width: 49%;
@@ -351,7 +252,7 @@ body {
 }
 
 /* mobile devices */
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:300px) {
     /* for mobile phones */
     .rank-container {
         width: 100%;

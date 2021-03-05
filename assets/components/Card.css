@@ -1,0 +1,53 @@
+
+.rank-type {
+    color: rgb(62,74,86);
+    font-family: Poppins, sans-serif;
+    font-size: 1.2em; 
+    font-style: normal;
+    font-weight: 500;
+    margin-left: 1.2em;
+}
+
+.card {
+    width: 23.5%;
+    float: left;
+    margin-bottom: 2em;
+    position: relative;
+    background-color: white;
+    box-shadow: rgba(0, 23, 62, 0.2) 0 7px 11px -4px, rgb(168, 185, 213) 0 0 1px 0;
+    border-radius: 0.7em;
+}
+
+.margin-1 {
+    margin-right: 2%;
+}
+
+.margin-2 {
+    margin-right: 2%;
+}
+
+/* tablets */
+@media only screen and (max-width:1000px) {
+    .card {
+        width: 49%;
+    }
+
+    .margin-2 {
+        margin-right: 0;
+    }
+}
+
+/* mobile devices */
+@media only screen and (max-width:480px) {
+    .card {
+        width: 100%;
+    }
+    
+    .margin-1 {
+        margin-right: 0;
+    }
+
+    .margin-2 {
+        margin-right: 0;
+    }
+}

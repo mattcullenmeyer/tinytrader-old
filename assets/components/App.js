@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 //import axios from 'axios';
-import SmallCard from './SmallCard';
+import Card from './Card';
 import RankCircle from './RankCircle';
+import Table from './Table';
 
 
 
@@ -52,39 +53,89 @@ class App extends React.Component {
 
                 <h2 className="sub-heading">Composite Ranks</h2>
 
-                <SmallCard title="Overall" margin="factor-margin-1">
+                <Card title="Overall" size="small" location="left" >
                     <RankCircle rank={this.state.metrics.composite_rank} />
-                </SmallCard>
+                </Card>
 
-                <SmallCard title="Value" margin="factor-margin-2">
+                <Card title="Value" size="small" location="middleLeft">
                     <RankCircle rank={this.state.metrics.value_rank} />
-                </SmallCard>
+                </Card>
 
-                <SmallCard title="Momentum" margin="factor-margin-1">
+                <Card title="Momentum" size="small" location="middleRight">
                     <RankCircle rank={this.state.metrics.mom_rank} />
-                </SmallCard>
+                </Card>
 
-                <SmallCard title="Quality">
+                <Card title="Quality" size="small" location="right">
                     <RankCircle rank={this.state.metrics.quality_rank} />
-                </SmallCard>
+                </Card>
 
-                <h2 class="sub-heading">Quality Ranks</h2>
+                <h2 className="sub-heading">Quality Ranks</h2>
 
-                <SmallCard title="Volatility" margin="factor-margin-1">
+                <Card title="Volatility" size="small" location="left">
                     <RankCircle rank={this.state.metrics.vol_rank} />
-                </SmallCard>
+                </Card>
 
-                <SmallCard title="Profitability" margin="factor-margin-2">
+                <Card title="Profitability" size="small" location="middleLeft">
                     <RankCircle rank={this.state.metrics.profit_rank} />
-                </SmallCard>
+                </Card>
 
-                <SmallCard title="Financing" margin="factor-margin-1">
+                <Card title="Financing" size="small" location="middleRight">
                     <RankCircle rank={this.state.metrics.finance_rank} />
-                </SmallCard>
+                </Card>
 
-                <SmallCard title="Safety">
+                <Card title="Safety" size="small" location="right">
                     <RankCircle rank={this.state.metrics.safety_rank} />
-                </SmallCard>
+                </Card>
+
+                <h2 className="sub-heading">Individual Ranks</h2>
+
+                <Card title="Earnings / Price" size="large" location="left">
+                    <RankCircle rank={this.state.metrics.pe_sec_rank} />
+                    <Table 
+                        ticker={this.state.ticker} 
+                        value={this.state.metrics.pe_value}
+                        secMedian={this.state.metrics.pe_sec_median}
+                        secRank={this.state.metrics.pe_sec_rank}
+                        indMedian={this.state.metrics.pe_ind_median}
+                        indRank={this.state.metrics.pe_ind_rank}
+                    />
+                </Card>
+
+                <Card title="Book / Price" size="large" location="middleLeft">
+                    <RankCircle rank={this.state.metrics.pb_sec_rank} />
+                    <Table 
+                        ticker={this.state.ticker} 
+                        value={this.state.metrics.pb_value}
+                        secMedian={this.state.metrics.pb_sec_median}
+                        secRank={this.state.metrics.pb_sec_rank}
+                        indMedian={this.state.metrics.pb_ind_median}
+                        indRank={this.state.metrics.pb_ind_rank}
+                    />
+                </Card>
+
+                <Card title="Sales / Price" size="large" location="middleRight">
+                    <RankCircle rank={this.state.metrics.ps_sec_rank} />
+                    <Table 
+                        ticker={this.state.ticker} 
+                        value={this.state.metrics.ps_value}
+                        secMedian={this.state.metrics.ps_sec_median}
+                        secRank={this.state.metrics.ps_sec_rank}
+                        indMedian={this.state.metrics.ps_ind_median}
+                        indRank={this.state.metrics.ps_ind_rank}
+                    />
+                </Card>
+
+                <Card title="FCF / Price" size="large" location="right">
+                    <RankCircle rank={this.state.metrics.pcf_sec_rank} />
+                    <Table 
+                        ticker={this.state.ticker} 
+                        value={this.state.metrics.pcf_value}
+                        secMedian={this.state.metrics.pcf_sec_median}
+                        secRank={this.state.metrics.pcf_sec_rank}
+                        indMedian={this.state.metrics.pcf_ind_median}
+                        indRank={this.state.metrics.pcf_ind_rank}
+                    />
+                </Card>
 
             </div>
         );
