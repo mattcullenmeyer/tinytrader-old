@@ -1,0 +1,16 @@
+
+body {
+    background-color: rgb(248,250,252);
+}
+
+h2 {
+    color: rgb(62,74,86);
+    font-family: Poppins, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.3em; 
+    font-style: normal;
+    font-weight: 500; 
+    margin-bottom: 1.3em;
+    border-bottom: 0.02em solid rgb(62,74,86);
+    padding-bottom: 0.5em;
+}

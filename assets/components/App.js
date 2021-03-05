@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import ReactDOM from "react-dom";
 import axios from 'axios';
@@ -48,7 +49,7 @@ class App extends React.Component {
                     date={this.state.metadata.last_updated}
                 />
 
-                <h2 className="sub-heading">Composite Ranks</h2>
+                <h2>Composite Ranks</h2>
 
                 <Card title="Overall" size="small" location="left" >
                     <RankCircle rank={this.state.metrics.composite_rank} />
@@ -66,7 +67,7 @@ class App extends React.Component {
                     <RankCircle rank={this.state.metrics.quality_rank} />
                 </Card>
 
-                <h2 className="sub-heading">Quality Ranks</h2>
+                <h2>Quality Ranks</h2>
 
                 <Card title="Volatility" size="small" location="left">
                     <RankCircle rank={this.state.metrics.vol_rank} />
@@ -84,7 +85,7 @@ class App extends React.Component {
                     <RankCircle rank={this.state.metrics.safety_rank} />
                 </Card>
 
-                <h2 className="sub-heading">Individual Ranks</h2>
+                <h2>Individual Ranks</h2>
 
                 <Card title="Earnings / Price" size="large" location="left">
                     <RankCircle rank={this.state.metrics.pe_sec_rank} />

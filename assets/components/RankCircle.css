@@ -1,0 +1,41 @@
+
+.circle {
+    width: 10em; 
+    height: 10em;
+    border-radius: 50%;
+    border: 1em solid rgb(248,250,252);
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    overflow: hidden;
+}
+
+
+.rank-text {
+    font-size: 2.7em;
+    font-weight: 600;
+    font-family: Poppins, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    margin-top: 0.77em;
+    color: rgb(62,74,86);
+}
+
+.arc {
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 1em solid white;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    overflow: hidden;
+    transform: rotate(45deg);
+}

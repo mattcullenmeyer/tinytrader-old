@@ -1,3 +1,4 @@
+import './RankCircle.css';
 import React from 'react';
 import {
     first_arc_border_color, 
