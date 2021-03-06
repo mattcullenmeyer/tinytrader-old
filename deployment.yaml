@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tinytrader-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tinytrader-server
+  template:
+    metadata:
+      labels:
+        app: tinytrader-server
+    spec:
+      containers:
+      - name: tinytrader-server-container
+        image: mattcullenmeyer/tinytrader-server
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

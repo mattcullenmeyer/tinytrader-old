@@ -12,7 +12,7 @@ Get started by cloning the repo:
 Once cloned, navigate to the root directory of the project:   
 `$ cd tinytrader`   
 
-### Running Server in Docker   
+### Running in Docker   
 
 Run the following command in the root directory of the project to start the server as a docker container.   
 `$ docker-compose up -d --build`   
