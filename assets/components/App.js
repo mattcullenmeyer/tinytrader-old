@@ -16,25 +16,30 @@ const ticker = ticker_path.replace(/\//g, '');
 
 class App extends React.Component {
     state = { 
-        ticker: ticker,
+        ticker: [],
         metadata: [],
         metrics: [],
     };
 
     async componentDidMount() {
-        // Get ticker id from ticker symbol
-        const ticker_response = await axios.get(`/api/ticker/${this.state.ticker}/`);
-        const ticker_id = ticker_response.data.id;
+        try {           
+            // Get ticker id from ticker symbol
+            const ticker_response = await axios.get(`/api/ticker/${ticker}/`);
+            this.setState({ ticker: ticker_response.data });
 
-        // Get metrics for company
-        const metric_response = await axios.get(`/api/metric/${ticker_id}/`);
-        this.setState({ metrics: metric_response.data });
+            const ticker_id = this.state.ticker.id; 
+            document.title = this.state.ticker.ticker;
 
-        // Get metadata for company
-        const metadata_response = await axios.get(`/api/metadata/${ticker_id}/`);
-        this.setState({ metadata: metadata_response.data });
+            // Get metrics for company
+            const metric_response = await axios.get(`/api/metric/${ticker_id}/`);
+            this.setState({ metrics: metric_response.data });
 
-        document.title = this.state.ticker;
+            // Get metadata for company
+            const metadata_response = await axios.get(`/api/metadata/${ticker_id}/`);
+            this.setState({ metadata: metadata_response.data });
+        } catch(error) {
+            console.log("error", error);
+        };
     };
 
 
@@ -44,7 +49,7 @@ class App extends React.Component {
             <div>
                 <Header 
                     company_name={this.state.metadata.company_name} 
-                    ticker={this.state.ticker}
+                    ticker={this.state.ticker.ticker}
                     date={this.state.metadata.last_updated}
                 />
 
@@ -89,7 +94,7 @@ class App extends React.Component {
                 <Card title="Earnings / Price" size="large" location="left">
                     <RankCircle rank={this.state.metrics.pe_sec_rank} />
                     <Table 
-                        ticker={this.state.ticker} 
+                        ticker={this.state.ticker.ticker} 
                         value={this.state.metrics.pe_value}
                         secMedian={this.state.metrics.pe_sec_median}
                         secRank={this.state.metrics.pe_sec_rank}
@@ -102,7 +107,7 @@ class App extends React.Component {
                 <Card title="Book / Price" size="large" location="middleLeft">
                     <RankCircle rank={this.state.metrics.pb_sec_rank} />
                     <Table 
-                        ticker={this.state.ticker} 
+                        ticker={this.state.ticker.ticker} 
                         value={this.state.metrics.pb_value}
                         secMedian={this.state.metrics.pb_sec_median}
                         secRank={this.state.metrics.pb_sec_rank}
@@ -115,7 +120,7 @@ class App extends React.Component {
                 <Card title="Sales / Price" size="large" location="middleRight">
                     <RankCircle rank={this.state.metrics.ps_sec_rank} />
                     <Table 
-                        ticker={this.state.ticker} 
+                        ticker={this.state.ticker.ticker} 
                         value={this.state.metrics.ps_value}
                         secMedian={this.state.metrics.ps_sec_median}
                         secRank={this.state.metrics.ps_sec_rank}
@@ -128,7 +133,7 @@ class App extends React.Component {
                 <Card title="FCF / Price" size="large" location="right">
                     <RankCircle rank={this.state.metrics.pcf_sec_rank} />
                     <Table 
-                        ticker={this.state.ticker} 
+                        ticker={this.state.ticker.ticker} 
                         value={this.state.metrics.pcf_value}
                         secMedian={this.state.metrics.pcf_sec_median}
                         secRank={this.state.metrics.pcf_sec_rank}
